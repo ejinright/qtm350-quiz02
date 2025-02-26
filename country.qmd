@@ -1,0 +1,65 @@
+---
+title: "Relationship between Life Expectancy, GDP per Capita, and Population for Canada"
+---
+
+I decided to focus the next analysis on Canada. I will be visualizing `life_expectancy`, `gpp_per_capita`, and `population_millions` over time in Canada.
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, readr, ggplot2)
+gapminder <- read_csv("./gapminder.csv")
+
+```
+
+```{r}
+#| label: fig-canadalife
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.cap: "This is a scatter plot showing the life expectancy over time in Canada"
+
+ggplot(data=filter(gapminder, country == "Canada"), aes(x=year, y=life_expectancy)) +
+  geom_line() +
+  labs(title="Life Expectancy over Time in Canada",
+       x="Years",
+       y="Life Expectancy (years)")
+
+```
+
+In @fig-canadalife you can see life expectancy has increased over time in Canada.
+
+```{r}
+#| label: fig-canadagdp
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.cap: "This is a scatter plot showing the GDP per Capita over time in Canada"
+
+ggplot(data=filter(gapminder, country == "Canada"), aes(x=year, y=gdp_per_capita)) +
+  geom_line() +
+  labs(title="GDP per Capita over Time in Canada",
+       x="Years",
+       y="GDP per Capita (dollars)")
+
+```
+
+In @fig-canadagdp you can see GDP per capita has increased over time in Canada.
+
+```{r}
+#| label: fig-canadapop
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.cap: "This is a scatter plot showing the population over time in Canada"
+
+ggplot(data=filter(gapminder, country == "Canada"), aes(x=year, y=population_millions)) +
+  geom_line() +
+  labs(title="Population over Time in Canada",
+       x="Years",
+       y="Population (Millions)")
+
+```
+
+In @fig-canadapop you can see life expectancy has increased over time in Canada.

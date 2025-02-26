@@ -1,0 +1,31 @@
+---
+title: "Relationship between Life Expectancy and GDP per Capita"
+---
+
+To begin analysis, I will first visualize the relationship between `life_expectancy` and `gdp_per_capita`
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, readr, ggplot2)
+gapminder <- read_csv("./gapminder.csv")
+
+```
+
+```{r}
+#| label: fig-lifegdp
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.cap: "This is a scatter plot showing the relationship between life expectancy and gdp per capita"
+
+ggplot(data=gapminder, aes(x=gdp_per_capita, y=life_expectancy)) +
+  geom_point() +
+  labs(title="Relationship Between Life Expectancy and GDP per Capita",
+       x="GDP per Capita (Dollars)",
+       y="Life Expectancy (years)")
+
+```
+
+In @fig-lifegdp you can see the relationship between these variables.

@@ -1,0 +1,31 @@
+---
+title: "Relationship between Life Expectancy and Country Population"
+---
+
+Next, I will visualize the relationship between `life_expectancy` and `population_millions`.
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, readr, ggplot2)
+gapminder <- read_csv("./gapminder.csv")
+
+```
+
+```{r}
+#| label: fig-lifepop
+#| echo: false
+#| message: false
+#| warning: false
+#| fig.cap: "This is a scatter plot showing the relationship between life expectancy and country population"
+
+ggplot(data=gapminder, aes(x=population_millions, y=life_expectancy)) +
+  geom_point() +
+  labs(title="Relationship Between Life Expectancy and Country Population",
+       x="Population (Millions)",
+       y="Life Expectancy (years)")
+
+```
+
+In @fig-lifepop you can see the relationship between these variables.

@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Gapminder Analysis",
+    "section": "",
+    "text": "This website will contain preliminary analysis of the Gapminder dataset. The Gapminder dataset contains information on 142 countries from 1952 to 2007 in 5-year intervals. The variables available to analyze are: country, continent, year, life_expectancy, population_millions, and gpd_per_capita. Below, you can see the first six lines of the dataset.\n\ngapminder &lt;- read_csv(\"./gapminder.csv\")\nhead(gapminder)\n\n# A tibble: 6 × 6\n  country     continent  year life_expectancy population_millions gdp_per_capita\n  &lt;chr&gt;       &lt;chr&gt;     &lt;dbl&gt;           &lt;dbl&gt;               &lt;dbl&gt;          &lt;dbl&gt;\n1 Afghanistan Asia       1952            28.8                8.43           779.\n2 Afghanistan Asia       1957            30.3                9.24           821.\n3 Afghanistan Asia       1962            32.0               10.3            853.\n4 Afghanistan Asia       1967            34.0               11.5            836.\n5 Afghanistan Asia       1972            36.1               13.1            740.\n6 Afghanistan Asia       1977            38.4               14.9            786.\n\n\nBelow you will find links to the other pages:\n\nLife Expectancy and GDP per Capita\nLife Expectancy and Population\nCountry Analysis\n\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "life-population.html",
+    "href": "life-population.html",
+    "title": "Relationship between Life Expectancy and Country Population",
+    "section": "",
+    "text": "Next, I will visualize the relationship between life_expectancy and population_millions.\n\n\n\n\n\n\n\n\nFigure 1: This is a scatter plot showing the relationship between life expectancy and country population\n\n\n\n\n\nIn Figure 1 you can see the relationship between these variables.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "life-gdp.html",
+    "href": "life-gdp.html",
+    "title": "Relationship between Life Expectancy and GDP per Capita",
+    "section": "",
+    "text": "To begin analysis, I will first visualize the relationship between life_expectancy and gdp_per_capita\n\n\n\n\n\n\n\n\nFigure 1: This is a scatter plot showing the relationship between life expectancy and gdp per capita\n\n\n\n\n\nIn Figure 1 you can see the relationship between these variables.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "country.html",
+    "href": "country.html",
+    "title": "Relationship between Life Expectancy, GDP per Capita, and Population for Canada",
+    "section": "",
+    "text": "I decided to focus the next analysis on Canada. I will be visualizing life_expectancy, gpp_per_capita, and population_millions over time in Canada.\n\n\n\n\n\n\n\n\nFigure 1: This is a scatter plot showing the life expectancy over time in Canada\n\n\n\n\n\nIn Figure 1 you can see life expectancy has increased over time in Canada.\n\n\n\n\n\n\n\n\nFigure 2: This is a scatter plot showing the GDP per Capita over time in Canada\n\n\n\n\n\nIn Figure 1 you can see GDP per capita has increased over time in Canada.\n\n\n\n\n\n\n\n\nFigure 3: This is a scatter plot showing the population over time in Canada\n\n\n\n\n\nIn Figure 3 you can see life expectancy has increased over time in Canada.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "This site was created by Emma Jinright.\n\n\n\n Back to top"
+  },
+  {
+    "objectID": "create-dataset.html",
+    "href": "create-dataset.html",
+    "title": "Create the Gapminder dataset",
+    "section": "",
+    "text": "# Import necessary libraries\nimport pandas as pd\nfrom gapminder import gapminder\n\n# Rename 'lifeExp' to 'life_expectancy' and 'gdpPercap' to 'gdp_per_capita'\ngapminder = gapminder.rename(columns={'lifeExp': 'life_expectancy',\n                                      'pop': 'population_millions', \n                                      'gdpPercap': 'gdp_per_capita'})\n\n# Convert population to millions\ngapminder['population_millions'] = gapminder['population_millions'] / 1_000_000\n\n# Create a new pandas DataFrame from the modified gapminder data\ngapminder_df = pd.DataFrame(gapminder)\n\n# Save the DataFrame as a CSV file\ngapminder_df.to_csv('gapminder.csv', index=False)\n\n# Print the first 3 rows of the DataFrame\nprint(gapminder_df.head(3))\n\n       country continent  year  life_expectancy  population_millions  \\\n0  Afghanistan      Asia  1952           28.801             8.425333   \n1  Afghanistan      Asia  1957           30.332             9.240934   \n2  Afghanistan      Asia  1962           31.997            10.267083   \n\n   gdp_per_capita  \n0      779.445314  \n1      820.853030  \n2      853.100710  \n\n\n\n\n\n Back to top"
+  }
+]

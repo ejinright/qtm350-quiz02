@@ -1,0 +1,30 @@
+---
+title: "Gapminder Analysis"
+---
+
+This website will contain preliminary analysis of the `Gapminder` dataset. The `Gapminder` dataset contains information on 142 countries from 1952 to 2007 in 5-year intervals. The variables available to analyze are: `country`, `continent`, `year`, `life_expectancy`, `population_millions`, and `gpd_per_capita`. Below, you can see the first six lines of the dataset.
+
+```{r}
+#| label: setup
+#| include: false
+
+pacman::p_load(tidyverse, readr, ggplot2)
+
+```
+
+
+```{r}
+#| label: dataset
+#| message: false
+#| warning: false
+gapminder <- read_csv("./gapminder.csv")
+head(gapminder)
+```
+
+Below you will find links to the other pages:
+
+  - [Life Expectancy and GDP per Capita]()
+
+  - [Life Expectancy and Population]()
+  
+  - [Country Analysis]()
