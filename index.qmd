@@ -23,8 +23,10 @@ head(gapminder)
 
 Below you will find links to the other pages:
 
-  - [Life Expectancy and GDP per Capita]()
-
-  - [Life Expectancy and Population]()
+  - [About](https://ejinright.github.io/qtm350-quiz02/about.html)
   
-  - [Country Analysis]()
+  - [Life Expectancy and GDP per Capita](https://ejinright.github.io/qtm350-quiz02/life-gdp.html)
+
+  - [Life Expectancy and Population](https://ejinright.github.io/qtm350-quiz02/life-population.html)
+
+  - [Country Analysis](https://ejinright.github.io/qtm350-quiz02/country.html)
